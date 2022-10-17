@@ -2,9 +2,11 @@ module.exports = app => {
     const Users = app.models.users;
 
 
-    app.get("/users/:id", async (req,res) => {
+    app.route("/user")
+    .all(app.auth.authenticate())
+    .get(async (req,res) => {
         try {
-            const {id} = req.params;
+            const {id} = req.user;
             const attributes = ['id','name','email']
             const options = {attributes};
             const result = await Users.findByPk(id, options);
@@ -18,9 +20,9 @@ module.exports = app => {
         }
     })
 
-    app.delete('/users/:id',async (req,res) => {
+    .delete(async (req,res) => {
         try { 
-            const {id} = req.params;
+            const {id} = req.user;
             const where = {id};
             await Users.destroy({where});
             res.sendStatus(204);
@@ -31,7 +33,7 @@ module.exports = app => {
     })
 
 
-    app.post('/users',async (req,res) => {
+    .post(async (req,res) => {
         try {
            const result = await Users.create(req.body);
            res.json(result);
