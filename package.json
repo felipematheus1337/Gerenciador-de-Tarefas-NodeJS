@@ -4,7 +4,8 @@
   "description": "API de gestão de tarefas",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test":"SET NODE_ENV=test && mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,10 @@
     "passport-jwt": "^4.0.0",
     "sequelize": "^6.25.2",
     "sqlite3": "^5.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0",
+    "supertest": "^6.3.0"
   }
 }
