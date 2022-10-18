@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test":"SET NODE_ENV=test && mocha test/**/*.js"
+    "apidoc": "apidoc -i routes/ -o public/apidoc",
+    "test": "SET NODE_ENV=test && mocha test/**/*.js"
+  },
+  "apidoc" : {
+    "name" : "Documentação - Node TASK API",
+    "template" : {
+      "forceLanguage": "pt_br"
+    }
   },
   "repository": {
     "type": "git",
@@ -28,6 +35,7 @@
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
+    "apidoc": "^0.53.1",
     "chai": "^4.3.6",
     "mocha": "^10.1.0",
     "supertest": "^6.3.0"

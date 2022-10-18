@@ -1,7 +1,7 @@
 const supertest	= require('supertest');
 const chai = require('chai');
 const app = require('../index.js');
-const config = require('../config.js');
+const config = require("../config.js")
 
 
 global.app = app;

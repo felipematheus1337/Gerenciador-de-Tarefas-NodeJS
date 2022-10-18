@@ -3,7 +3,6 @@ module.exports = {
         database: 'ntask',
         username:'',
         password:'',
-    
         params: {
          dialect: 'sqlite',
          storage: 'ntask_test.sqlite',
@@ -13,7 +12,6 @@ module.exports = {
           }
         },
     },
-
         jwt: {
             secret:'nta$K-AP1',
             options: {session: false}
