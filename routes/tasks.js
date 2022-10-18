@@ -2,7 +2,7 @@ module.exports = app => {
    const Tasks = app.models.tasks;
 
    app.route("/tasks")
-   all(app.auth.authenticate())
+   .all(app.auth.authenticate())
    .get(async (req,res) => {
     try {
         const where = {userId: req.user.id};

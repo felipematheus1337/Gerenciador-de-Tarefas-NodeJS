@@ -1,5 +1,5 @@
 const passport = require("passport");
-const {Strategy, Extractjwt} = require("passport-jwt");
+const {Strategy, ExtractJwt} = require("passport-jwt");
 const config = require("./config");
 
 module.exports = (app) => {
@@ -9,7 +9,7 @@ module.exports = (app) => {
 
     const params = {
         secretOrKey:jwt.secret,
-        jwtFromRequest: Extractjwt.fromHeader('Authorization')
+        jwtFromRequest: ExtractJwt.fromHeader('Authorization')
     };
 
 
